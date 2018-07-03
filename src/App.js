@@ -5,15 +5,22 @@ import Stepper from "./components/Stepper";
 
 const generateItems = (itemsNumber, completed) => {
   const items = [];
-
+  let currentStepAssigned = false;
   for (let i = 0; i < itemsNumber; i++) {
     items.push({
       label: `Lorem ipsum ${i}`,
       onClick: () => {
         console.log("clicked");
       },
-      completed: (i + 1) / itemsNumber < 0.5 || completed ? true : false
+      completed: (i + 1) / itemsNumber < 0.5 || completed ? true : false,
+      currentItem:
+        (i + 1) / itemsNumber >= 0.5 && !completed && !currentStepAssigned
+          ? true
+          : false
     });
+    if ((i + 1) / itemsNumber >= 0.5 && !completed) {
+      currentStepAssigned = true;
+    }
   }
 
   return items;
