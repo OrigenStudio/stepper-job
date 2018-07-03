@@ -1,35 +1,36 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./styles/styles.css";
 import Stepper from "./components/Stepper";
 
 const generateItems = itemsNumber => {
   const items = [];
 
-  for (let i = 0; i < itemsNumber; i++){
+  for (let i = 0; i < itemsNumber; i++) {
     items.push({
       label: `Lorem ipsum ${i}`,
       onClick: () => {
         console.log("clicked");
       },
       completed: (i + 1) / itemsNumber > 0.5 ? true : false
-    })
+    });
   }
-  
+
   return items;
 };
 
-const generateStep = () => {
+const generateStep = currentStep => {
   return {
     title: "Lorem ipsum",
-    items: generateItems(Math.floor((Math.random() * 5)+1))
+    items: generateItems(Math.floor(Math.random() * 5 + 1)),
+    currentStep: currentStep
   };
 };
 
 const generateSteps = stepsNumber => {
   const steps = [];
-  for(let i = 0; i<stepsNumber; i++){
-    steps.push(generateStep());
+  for (let i = 0; i < stepsNumber; i++) {
+    steps.push(generateStep(Math.floor(i / stepsNumber) == stepsNumber / 2));
   }
   return steps;
 };
@@ -47,7 +48,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Stepper steps={steps} />
+        <Stepper title={"Cycle 2"} description={"Designing your brand"} steps={steps} />
       </div>
     );
   }
