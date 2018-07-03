@@ -1,0 +1,58 @@
+@import "./variables";
+
+.bubbleContentListWrapper {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  width: 100%;
+  border-bottom-left-radius: $defaultBorderRadius;
+  border-bottom-right-radius: $defaultBorderRadius;
+  ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    li {
+      display: flex;
+      padding-bottom: 4px;
+      cursor: pointer;
+      .icon {
+        width: 30px;
+      }
+    }
+    li:first-child {
+      padding-top: $defaultPadding;
+    }
+    li:last-child {
+      padding-bottom: $defaultPadding;
+    }
+    li.completedItem {
+      color: $primaryColor;
+      background-color: rgba($primaryColor, 0.1);
+    }
+    li.completedItem:last-child {
+      padding-bottom: $defaultPadding;
+    }
+    li.currentItem {
+      color: $secondaryColor;
+      font-weight: 600;
+      padding-top: $defaultPadding;
+      padding-bottom: 4px;
+    }
+    li.disabledItem {
+      cursor: auto;
+      color:$disabledTextColor;
+    }
+  }
+}
+
+.completedBubbleContentList {
+  background-color: $primaryColor;
+  border-bottom-left-radius: $defaultBorderRadius;
+  border-bottom-right-radius: $defaultBorderRadius;
+  color: $accentTextColor;
+}

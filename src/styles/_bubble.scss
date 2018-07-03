@@ -1,15 +1,16 @@
 @import './variables';
 
 .bubbleWrapper {
+  width: 320px;
   display: "flex";
-  width: 120px;
   box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35), 0 2px 22px 0 rgba(0, 0, 0, 0.2);
   border-radius: $defaultBorderRadius;
   .title {
     min-height: 30px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding-left: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
     span {
       font-family: Montserrat;
       font-size: 10px;
@@ -43,8 +44,11 @@
 }
 
 .headingBubble {
+  width: 120px;
   background-color: $headingColor;
   .title {
+    padding:0;
+    justify-content: center;
     span {
       color: #ffffff;
     }
