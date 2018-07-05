@@ -14,7 +14,7 @@ class Stepper extends React.Component {
   }
 
   handleStepClick = index => {
-      // TODO do some validation
+    // TODO do some validation
     this.setState({
       openStep: index
     });
@@ -25,21 +25,27 @@ class Stepper extends React.Component {
     console.log(steps);
     return (
       <div className="stepperWrapper">
-        <Bubble title="CYCLE 2" state="heading">
-          <span className="description"> Designing you brand </span>
-        </Bubble>
-        {steps.map((step, index) => (
-          <div key={step.title + index}>
-            <CollapsibleBubble
-              index={index}
-              {...step}
-              first={index===0}
-              last={index + 1 === steps.length}
-              expanded={index === this.state.openStep}
-              onStepClick={this.handleStepClick}
-            />
-          </div>
-        ))}
+        <div className="textSection">
+          <span className="title">Current Training</span>
+          <span className="subtitle">Cycle 2: Session 2: Sprint 3</span>
+        </div>
+        <div className="steps">
+          <Bubble title="CYCLE 2" state="heading">
+            <span className="description"> Designing you brand </span>
+          </Bubble>
+          {steps.map((step, index) => (
+            <div key={step.title + index}>
+              <CollapsibleBubble
+                index={index}
+                {...step}
+                first={index === 0}
+                last={index + 1 === steps.length}
+                expanded={index === this.state.openStep}
+                onStepClick={this.handleStepClick}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
