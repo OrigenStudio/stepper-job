@@ -1,16 +1,19 @@
-@import './variables';
+@import "./variables";
 
 .bubbleWrapper {
   width: 320px;
+  height: fit-content;
   display: "flex";
   box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35), 0 2px 22px 0 rgba(0, 0, 0, 0.2);
   border-radius: $defaultBorderRadius;
+  z-index: 200;
+  position: relative;
   .title {
     min-height: 30px;
     display: flex;
     align-items: center;
     padding-left: 30px;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     span {
       font-family: Montserrat;
       font-size: 10px;
@@ -47,7 +50,7 @@
   width: 120px;
   background-color: $headingColor;
   .title {
-    padding:0;
+    padding: 0;
     justify-content: center;
     span {
       color: #ffffff;

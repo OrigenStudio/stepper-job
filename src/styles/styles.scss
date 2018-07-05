@@ -4,6 +4,8 @@
 @import './variables.scss';
 @import './bubble.scss';
 @import './bubble-content-list.scss';
+@import './collapsible-bubble.scss';
+@import './stepper.scss';
 
 .App {
   text-align: center;
@@ -37,10 +39,6 @@
     transform: rotate(360deg);
   }
 }
-
-.stepperWrapper {
-}
-
 
 
 .description {

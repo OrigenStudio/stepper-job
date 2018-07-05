@@ -1,0 +1,8 @@
+.stepperWrapper {
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+    background-color: #292929;
+    padding: $defaultPadding * 4;
+    overflow: scroll;
+}

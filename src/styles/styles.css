@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
 .bubbleWrapper {
   width: 320px;
+  height: fit-content;
   display: "flex";
   box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35), 0 2px 22px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px; }
+  border-radius: 10px;
+  z-index: 200;
+  position: relative; }
   .bubbleWrapper .title {
     min-height: 30px;
     display: flex;
@@ -96,6 +99,98 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: #ffffff; }
+
+.collapsibleBubbleWrapper {
+  min-width: 150px; }
+  .collapsibleBubbleWrapper .firstBubbleExpandedLine {
+    position: relative;
+    left: -30px; }
+  .collapsibleBubbleWrapper .lineWrapper {
+    width: 100%;
+    display: flex;
+    align-content: center; }
+    .collapsibleBubbleWrapper .lineWrapper .line {
+      height: 3px;
+      width: 50%;
+      opacity: 0.25;
+      box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35), 0 2px 22px 0 rgba(0, 0, 0, 0.2), inset 0 0 3px 0 rgba(41, 41, 41, 0.25);
+      top: 16.5px;
+      z-index: 100;
+      position: relative;
+      background-color: #ffffff; }
+    .collapsibleBubbleWrapper .lineWrapper .lineNoOpacity {
+      opacity: 1; }
+    .collapsibleBubbleWrapper .lineWrapper .noLine {
+      opacity: 0; }
+  .collapsibleBubbleWrapper .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35), 0 2px 22px 0 rgba(0, 0, 0, 0.2); }
+  .collapsibleBubbleWrapper .circle-completed {
+    background-color: #2ca8ff;
+    color: #ffffff;
+    cursor: pointer; }
+  .collapsibleBubbleWrapper .circle-current {
+    background-color: #0fc440;
+    color: #ffffff;
+    cursor: pointer; }
+  .collapsibleBubbleWrapper .circle-disabled {
+    background-color: #ffffff;
+    color: #292929; }
+  .collapsibleBubbleWrapper .circleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff; }
+    .collapsibleBubbleWrapper .circleWrapper .positionIcon {
+      position: absolute;
+      top: -30px; }
+    .collapsibleBubbleWrapper .circleWrapper .textWrapper {
+      opacity: 0.5;
+      font-family: Montserrat;
+      font-size: 12px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+      margin-top: 8px; }
+      .collapsibleBubbleWrapper .circleWrapper .textWrapper .icon {
+        margin-right: 5px; }
+    .collapsibleBubbleWrapper .circleWrapper .currentStep {
+      opacity: 1; }
+  .collapsibleBubbleWrapper .currentStepNotExpandedCircle {
+    position: relative; }
+  .collapsibleBubbleWrapper .currentStepExpanded {
+    position: relative;
+    top: -30px; }
+    .collapsibleBubbleWrapper .currentStepExpanded .circle {
+      position: relative;
+      top: -10px;
+      left: 30px;
+      background-color: #ffffff;
+      color: #0fc440; }
+
+.firstBubbleExpanded {
+  width: 350px;
+  position: relative;
+  left: 30px; }
+
+.stepperWrapper {
+  min-height: 300px;
+  display: flex;
+  flex-direction: row;
+  background-color: #292929;
+  padding: 32px;
+  overflow: scroll; }
 
 .App {
   text-align: center; }

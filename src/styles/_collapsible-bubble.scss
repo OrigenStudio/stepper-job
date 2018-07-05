@@ -1,0 +1,112 @@
+.collapsibleBubbleWrapper {
+  min-width: 150px;
+
+  .firstBubbleExpandedLine {
+    position: relative;
+    left: -30px;
+  }
+
+  .lineWrapper {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    .line {
+      height: 3px;
+      width: 50%;
+      opacity: 0.25;
+      box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35),
+        0 2px 22px 0 rgba(0, 0, 0, 0.2), inset 0 0 3px 0 rgba(41, 41, 41, 0.25);
+      top: 16.5px;
+      z-index: 100;
+      position: relative;
+      background-color: $backgroundColor;
+    }
+    .lineNoOpacity {
+      opacity: 1;
+    }
+    .noLine {
+      opacity: 0;
+    }
+  }
+
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35),
+      0 2px 22px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .circle-completed {
+    background-color: $primaryColor;
+    color: $accentTextColor;
+    cursor: pointer;
+  }
+
+  .circle-current {
+    background-color: $secondaryColor;
+    color: $accentTextColor;
+    cursor: pointer;
+  }
+
+  .circle-disabled {
+    background-color: $backgroundColor;
+    color: $disabledTextColor;
+  }
+  .circleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $accentTextColor;
+    .positionIcon {
+      position: absolute;
+      top: -30px;
+    }
+
+    .textWrapper {
+      opacity: 0.5;
+      font-family: Montserrat;
+      font-size: 12px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      text-align: center;
+      color: $accentTextColor;
+      margin-top: $defaultUnit;
+      .icon {
+        margin-right: 5px;
+      }
+    }
+    .currentStep {
+      opacity: 1;
+    }
+  }
+  .currentStepNotExpandedCircle {
+    position: relative;
+  }
+
+  .currentStepExpanded {
+    position: relative;
+    top: -30px;
+    .circle {
+      position: relative;
+      top: -10px;
+      left: 30px;
+      background-color: $backgroundColor;
+      color: $secondaryColor;
+    }
+  }
+}
+
+.firstBubbleExpanded {
+  width: 350px;
+  position: relative;
+  left: 30px;
+}
