@@ -36,9 +36,17 @@
       margin-bottom: $defaultUnit;
     }
   }
+  .textSectionVertical{
+      align-items: center;
+  }
 
-  .steps {
+  .horizontal {
     display: flex;
     flex-direction: row;
+  }
+  .vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

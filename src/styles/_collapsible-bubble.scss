@@ -1,31 +1,54 @@
 .collapsibleBubbleWrapper {
-  min-width: 150px;
-
   .firstBubbleExpandedLine {
     position: relative;
     left: -30px;
   }
 
   .lineWrapper {
-    width: 100%;
     display: flex;
-    align-content: center;
-    .line {
-      height: 3px;
-      width: 50%;
+    z-index: 100;
+
+    .lineOpacity {
       opacity: 0.25;
-      box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35),
-        0 2px 22px 0 rgba(0, 0, 0, 0.2), inset 0 0 3px 0 rgba(41, 41, 41, 0.25);
-      top: 16.5px;
-      z-index: 100;
-      position: relative;
-      background-color: $backgroundColor;
     }
+
     .lineNoOpacity {
       opacity: 1;
     }
     .noLine {
       opacity: 0;
+    }
+  }
+
+  .horizontalLineWrapper {
+    align-content: center;
+    width: 100%;
+
+    .horizontalLine {
+      height: 3px;
+      width: 50%;
+      box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35),
+        0 2px 22px 0 rgba(0, 0, 0, 0.2), inset 0 0 3px 0 rgba(41, 41, 41, 0.25);
+      top: 16.5px;
+      position: relative;
+      background-color: $backgroundColor;
+    }
+  }
+
+  .verticalLineWrapper {
+    flex-direction: column;
+    align-items: center;
+    height: 60px;
+    position: relative;
+    left: 50%;
+
+    .verticalLine {
+      width: 3px;
+      height: 50%;
+      position: relative;
+      background-color: $backgroundColor;
+      box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35),
+        0 2px 22px 0 rgba(0, 0, 0, 0.2), inset 0 0 3px 0 rgba(41, 41, 41, 0.25);
     }
   }
 
@@ -59,14 +82,8 @@
   }
   .circleWrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+
     color: $accentTextColor;
-    .positionIcon {
-      position: absolute;
-      top: -30px;
-    }
 
     .textWrapper {
       opacity: 0.5;
@@ -79,7 +96,6 @@
       letter-spacing: normal;
       text-align: center;
       color: $accentTextColor;
-      margin-top: $defaultUnit;
       .icon {
         margin-right: 5px;
       }
@@ -87,12 +103,58 @@
     .currentStep {
       opacity: 1;
     }
+    .vertical {
+      width: 0px;
+      div {
+        width: 120px;
+        position: relative;
+        left: 55px;
+      }
+    }
+  }
+  .horizontalCircleWrapper {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .positionIcon {
+      position: absolute;
+      top: -30px;
+    }
+  }
+
+  .verticalCircleWrapper {
+    align-content: center;
+    justify-items: center;
+    flex-direction: row;
+    align-items: center;
+    .textWrapper {
+      margin-top: 0px;
+      position: relative;
+      left: $defaultUnit * 2;
+      text-align: left;
+    }
+
+    .positionIcon {
+      position: absolute;
+      top: 5px;
+      left: -30px;
+      transform: rotate(-90deg);
+    }
+
+    .iconWrapper {
+      width: 0px;
+      position: relative;
+      left: -20px;
+      display: flex;
+      align-items: center;
+      opacity: 0.5;
+    }
   }
   .currentStepNotExpandedCircle {
     position: relative;
   }
 
-  .currentStepExpanded {
+  .currentStepExpandedHorizontal {
     position: relative;
     top: -30px;
     .circle {
@@ -103,10 +165,39 @@
       color: $secondaryColor;
     }
   }
+  .currentStepExpandedVertical {
+    .circleWrapper {
+      height: 0px;
+      .circle {
+        position: relative;
+        left: -40px;
+        background-color: $backgroundColor;
+        color: $secondaryColor;
+      }
+    }
+  }
 }
 
 .firstBubbleExpanded {
   width: 350px;
   position: relative;
   left: 30px;
+}
+.firstBubbleExpandedVertical {
+  margin-top: 20px;
+  .lineWrapper {
+    top: -20px;
+  }
+}
+
+.collapsibleBubbleWrapperHorizontal {
+  min-width: 150px;
+}
+.collapsibleBubbleWrapperHorizontalExpanded {
+  width: 320px;
+}
+.collapsibleBubbleWrapperVertical {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
 }

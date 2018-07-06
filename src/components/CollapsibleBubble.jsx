@@ -3,7 +3,11 @@ import classNames from "classnames";
 import Bubble from "./Bubble";
 import BubbleContentList from "./BubbleContentList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheck,
+  faMapMarkerAlt,
+  faRulerVertical
+} from "@fortawesome/free-solid-svg-icons";
 
 class CollapsibleBubble extends React.Component {
   handleCircleClick = () => {
@@ -21,7 +25,8 @@ class CollapsibleBubble extends React.Component {
       completed,
       currentStep,
       last,
-      first
+      first,
+      verticalFormat
     } = this.props;
 
     // Some complex classes are composed before render for better code reading
@@ -32,10 +37,14 @@ class CollapsibleBubble extends React.Component {
       ["circle-disabled"]: !currentStep && !completed
     });
 
-    const leftLineClass = classNames("line", {
+    const leftLineClass = classNames("lineOpacity", {
+      horizontalLine: !verticalFormat,
+      verticalLine: verticalFormat,
       ["lineNoOpacity"]: !completed && !currentStep
     });
-    const rightLineClass = classNames("line", {
+    const rightLineClass = classNames("lineOpacity", {
+      horizontalLine: !verticalFormat,
+      verticalLine: verticalFormat,
       ["lineNoOpacity"]: !completed,
       ["noLine"]: last
     });
@@ -43,11 +52,17 @@ class CollapsibleBubble extends React.Component {
     return (
       <div
         className={classNames("collapsibleBubbleWrapper", {
-          firstBubbleExpanded: first && expanded
+          collapsibleBubbleWrapperHorizontal: !verticalFormat && !expanded,
+          collapsibleBubbleWrapperHorizontalExpanded: !verticalFormat && expanded && !first,
+          firstBubbleExpanded: first && expanded && !verticalFormat,
+          collapsibleBubbleWrapperVertical: verticalFormat,
+          firstBubbleExpandedVertical: first && expanded && verticalFormat
         })}
       >
         <div
           className={classNames("lineWrapper", {
+            horizontalLineWrapper: !verticalFormat,
+            verticalLineWrapper: verticalFormat,
             firstBubbleExpandedLine: first && expanded
           })}
         >
@@ -55,10 +70,19 @@ class CollapsibleBubble extends React.Component {
           <div className={rightLineClass} />
         </div>
         {expanded ? (
-          <div className={classNames({currentStepExpanded: currentStep && expanded})}>
-            {currentStep ? <div className={circleClass}>{index}</div> : null}
+          <div
+            className={classNames({
+              currentStepExpandedHorizontal: currentStep && expanded && !verticalFormat,
+              currentStepExpandedVertical: currentStep && expanded && verticalFormat
+            })}
+          >
+            {currentStep ? (
+              <div className="circleWrapper" >
+                <div className={classNames(circleClass, "circle")}>{index}</div>
+              </div>
+            ) : null}
             <Bubble
-              title={currentStep ? title :`${index} - ${title}`}
+              title={currentStep ? title : `${index} - ${title}`}
               state={completed ? "completed" : "default"}
             >
               <BubbleContentList
@@ -70,6 +94,8 @@ class CollapsibleBubble extends React.Component {
         ) : (
           <div
             className={classNames("circleWrapper", {
+              horizontalCircleWrapper: !verticalFormat,
+              verticalCircleWrapper: verticalFormat,
               currentStepNotExpandedCircle: currentStep
             })}
           >
@@ -80,18 +106,26 @@ class CollapsibleBubble extends React.Component {
                 className="positionIcon"
               />
             ) : null}
+            {completed && verticalFormat ? (
+              <div className="iconWrapper">
+                <FontAwesomeIcon icon={faCheck} size="xs" />
+              </div>
+            ) : null}
             <div className={circleClass} onClick={this.handleCircleClick}>
               {index}
             </div>
             <div
               className={classNames("textWrapper", {
-                currentStep: currentStep
+                currentStep: currentStep,
+                vertical: verticalFormat
               })}
             >
-              {completed ? (
-                <FontAwesomeIcon icon={faCheck} size="xs" className="icon" />
-              ) : null}
-              {title}
+              <div>
+                {completed && !verticalFormat ? (
+                  <FontAwesomeIcon icon={faCheck} size="xs" className="icon" />
+                ) : null}
+                {title}
+              </div>
             </div>
           </div>
         )}

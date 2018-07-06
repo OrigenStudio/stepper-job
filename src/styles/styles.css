@@ -100,89 +100,165 @@
   border-bottom-right-radius: 10px;
   color: #ffffff; }
 
-.collapsibleBubbleWrapper {
-  min-width: 150px; }
-  .collapsibleBubbleWrapper .firstBubbleExpandedLine {
+.collapsibleBubbleWrapper .firstBubbleExpandedLine {
+  position: relative;
+  left: -30px; }
+
+.collapsibleBubbleWrapper .lineWrapper {
+  display: flex;
+  z-index: 100; }
+  .collapsibleBubbleWrapper .lineWrapper .lineOpacity {
+    opacity: 0.25; }
+  .collapsibleBubbleWrapper .lineWrapper .lineNoOpacity {
+    opacity: 1; }
+  .collapsibleBubbleWrapper .lineWrapper .noLine {
+    opacity: 0; }
+
+.collapsibleBubbleWrapper .horizontalLineWrapper {
+  align-content: center;
+  width: 100%; }
+  .collapsibleBubbleWrapper .horizontalLineWrapper .horizontalLine {
+    height: 3px;
+    width: 50%;
+    box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35), 0 2px 22px 0 rgba(0, 0, 0, 0.2), inset 0 0 3px 0 rgba(41, 41, 41, 0.25);
+    top: 16.5px;
     position: relative;
-    left: -30px; }
-  .collapsibleBubbleWrapper .lineWrapper {
-    width: 100%;
-    display: flex;
-    align-content: center; }
-    .collapsibleBubbleWrapper .lineWrapper .line {
-      height: 3px;
-      width: 50%;
-      opacity: 0.25;
-      box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35), 0 2px 22px 0 rgba(0, 0, 0, 0.2), inset 0 0 3px 0 rgba(41, 41, 41, 0.25);
-      top: 16.5px;
-      z-index: 100;
-      position: relative;
-      background-color: #ffffff; }
-    .collapsibleBubbleWrapper .lineWrapper .lineNoOpacity {
-      opacity: 1; }
-    .collapsibleBubbleWrapper .lineWrapper .noLine {
-      opacity: 0; }
-  .collapsibleBubbleWrapper .circle {
-    width: 30px;
-    height: 30px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 200;
-    box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35), 0 2px 22px 0 rgba(0, 0, 0, 0.2); }
-  .collapsibleBubbleWrapper .circle-completed {
-    background-color: #2ca8ff;
-    color: #ffffff;
-    cursor: pointer; }
-  .collapsibleBubbleWrapper .circle-current {
-    background-color: #0fc440;
-    color: #ffffff;
-    cursor: pointer; }
-  .collapsibleBubbleWrapper .circle-disabled {
+    background-color: #ffffff; }
+
+.collapsibleBubbleWrapper .verticalLineWrapper {
+  flex-direction: column;
+  align-items: center;
+  height: 60px;
+  position: relative;
+  left: 50%; }
+  .collapsibleBubbleWrapper .verticalLineWrapper .verticalLine {
+    width: 3px;
+    height: 50%;
+    position: relative;
     background-color: #ffffff;
-    color: #292929; }
-  .collapsibleBubbleWrapper .circleWrapper {
+    box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35), 0 2px 22px 0 rgba(0, 0, 0, 0.2), inset 0 0 3px 0 rgba(41, 41, 41, 0.25); }
+
+.collapsibleBubbleWrapper .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.35), 0 2px 22px 0 rgba(0, 0, 0, 0.2); }
+
+.collapsibleBubbleWrapper .circle-completed {
+  background-color: #2ca8ff;
+  color: #ffffff;
+  cursor: pointer; }
+
+.collapsibleBubbleWrapper .circle-current {
+  background-color: #0fc440;
+  color: #ffffff;
+  cursor: pointer; }
+
+.collapsibleBubbleWrapper .circle-disabled {
+  background-color: #ffffff;
+  color: #292929; }
+
+.collapsibleBubbleWrapper .circleWrapper {
+  display: flex;
+  color: #ffffff; }
+  .collapsibleBubbleWrapper .circleWrapper .textWrapper {
+    opacity: 0.5;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff; }
+    .collapsibleBubbleWrapper .circleWrapper .textWrapper .icon {
+      margin-right: 5px; }
+  .collapsibleBubbleWrapper .circleWrapper .currentStep {
+    opacity: 1; }
+  .collapsibleBubbleWrapper .circleWrapper .vertical {
+    width: 0px; }
+    .collapsibleBubbleWrapper .circleWrapper .vertical div {
+      width: 120px;
+      position: relative;
+      left: 55px; }
+
+.collapsibleBubbleWrapper .horizontalCircleWrapper {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+  .collapsibleBubbleWrapper .horizontalCircleWrapper .positionIcon {
+    position: absolute;
+    top: -30px; }
+
+.collapsibleBubbleWrapper .verticalCircleWrapper {
+  align-content: center;
+  justify-items: center;
+  flex-direction: row;
+  align-items: center; }
+  .collapsibleBubbleWrapper .verticalCircleWrapper .textWrapper {
+    margin-top: 0px;
+    position: relative;
+    left: 16px;
+    text-align: left; }
+  .collapsibleBubbleWrapper .verticalCircleWrapper .positionIcon {
+    position: absolute;
+    top: 5px;
+    left: -30px;
+    transform: rotate(-90deg); }
+  .collapsibleBubbleWrapper .verticalCircleWrapper .iconWrapper {
+    width: 0px;
+    position: relative;
+    left: -20px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: #ffffff; }
-    .collapsibleBubbleWrapper .circleWrapper .positionIcon {
-      position: absolute;
-      top: -30px; }
-    .collapsibleBubbleWrapper .circleWrapper .textWrapper {
-      opacity: 0.5;
-      font-family: Montserrat;
-      font-size: 12px;
-      font-weight: 500;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.25;
-      letter-spacing: normal;
-      text-align: center;
-      color: #ffffff;
-      margin-top: 8px; }
-      .collapsibleBubbleWrapper .circleWrapper .textWrapper .icon {
-        margin-right: 5px; }
-    .collapsibleBubbleWrapper .circleWrapper .currentStep {
-      opacity: 1; }
-  .collapsibleBubbleWrapper .currentStepNotExpandedCircle {
-    position: relative; }
-  .collapsibleBubbleWrapper .currentStepExpanded {
+    opacity: 0.5; }
+
+.collapsibleBubbleWrapper .currentStepNotExpandedCircle {
+  position: relative; }
+
+.collapsibleBubbleWrapper .currentStepExpandedHorizontal {
+  position: relative;
+  top: -30px; }
+  .collapsibleBubbleWrapper .currentStepExpandedHorizontal .circle {
     position: relative;
-    top: -30px; }
-    .collapsibleBubbleWrapper .currentStepExpanded .circle {
-      position: relative;
-      top: -10px;
-      left: 30px;
-      background-color: #ffffff;
-      color: #0fc440; }
+    top: -10px;
+    left: 30px;
+    background-color: #ffffff;
+    color: #0fc440; }
+
+.collapsibleBubbleWrapper .currentStepExpandedVertical .circleWrapper {
+  height: 0px; }
+  .collapsibleBubbleWrapper .currentStepExpandedVertical .circleWrapper .circle {
+    position: relative;
+    left: -40px;
+    background-color: #ffffff;
+    color: #0fc440; }
 
 .firstBubbleExpanded {
   width: 350px;
   position: relative;
   left: 30px; }
+
+.firstBubbleExpandedVertical {
+  margin-top: 20px; }
+  .firstBubbleExpandedVertical .lineWrapper {
+    top: -20px; }
+
+.collapsibleBubbleWrapperHorizontal {
+  min-width: 150px; }
+
+.collapsibleBubbleWrapperHorizontalExpanded {
+  width: 320px; }
+
+.collapsibleBubbleWrapperVertical {
+  min-height: 50px;
+  display: flex;
+  align-items: center; }
 
 .stepperWrapper {
   min-height: 300px;
@@ -217,9 +293,15 @@
       letter-spacing: normal;
       color: #ffffff;
       margin-bottom: 8px; }
-  .stepperWrapper .steps {
+  .stepperWrapper .textSectionVertical {
+    align-items: center; }
+  .stepperWrapper .horizontal {
     display: flex;
     flex-direction: row; }
+  .stepperWrapper .vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
 
 .App {
   text-align: center; }
