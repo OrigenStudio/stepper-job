@@ -7,6 +7,12 @@
   border-radius: 10px;
   z-index: 200;
   position: relative; }
+  @media (max-width: 380px) {
+    .bubbleWrapper {
+      width: 280px; } }
+  @media (max-width: 330px) {
+    .bubbleWrapper {
+      width: 230px; } }
   .bubbleWrapper .title {
     min-height: 30px;
     display: flex;
@@ -199,7 +205,9 @@
   align-content: center;
   justify-items: center;
   flex-direction: row;
-  align-items: center; }
+  align-items: center;
+  position: relative;
+  left: calc(50% - 16.5px); }
   .collapsibleBubbleWrapper .verticalCircleWrapper .textWrapper {
     margin-top: 0px;
     position: relative;

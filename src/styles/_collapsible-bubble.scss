@@ -127,6 +127,8 @@
     justify-items: center;
     flex-direction: row;
     align-items: center;
+    position: relative;
+    left: calc(50% - 16.5px);
     .textWrapper {
       margin-top: 0px;
       position: relative;
