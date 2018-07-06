@@ -54,6 +54,11 @@ const generateSteps = stepsNumber => {
 
 const steps = generateSteps(5);
 
+const title = "Current Training";
+const subtitle = "Cycle 2: Session 2: Sprint 3";
+const heading = "Cycle 2";
+const headingDescription = "Designing you brand";
+
 class App extends Component {
   render() {
     return (
@@ -63,8 +68,10 @@ class App extends Component {
           <h1 className="App-title">Stepper component</h1>
         </header>
         <Stepper
-          title={"Cycle 2"}
-          description={"Designing your brand"}
+          title={title}
+          subtitle={subtitle}
+          heading={heading}
+          headingDescription={headingDescription}
           steps={steps}
         />
       </div>

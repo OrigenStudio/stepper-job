@@ -23,7 +23,14 @@ class Stepper extends React.Component {
   };
 
   render() {
-    const { steps, title, description, containerWidth } = this.props;
+    const {
+      steps,
+      title,
+      subtitle,
+      heading,
+      headingDescription,
+      containerWidth
+    } = this.props;
     // TODO remove comment
     console.log(steps);
 
@@ -31,10 +38,12 @@ class Stepper extends React.Component {
     return (
       <div className="stepperWrapper">
         <div
-          className={classNames("textSection", { textSectionVertical: verticalFormat })}
+          className={classNames("textSection", {
+            textSectionVertical: verticalFormat
+          })}
         >
-          <span className="title">Current Training</span>
-          <span className="subtitle">Cycle 2: Session 2: Sprint 3</span>
+          <span className="title">{title}</span>
+          <span className="subtitle">{subtitle}</span>
         </div>
         <div
           className={classNames({
@@ -42,8 +51,8 @@ class Stepper extends React.Component {
             horizontal: !verticalFormat
           })}
         >
-          <Bubble title="CYCLE 2" state="heading">
-            <span className="description"> Designing you brand </span>
+          <Bubble title={heading} state="heading">
+            <span className="description"> {headingDescription} </span>
           </Bubble>
           {steps.map((step, index) => (
             <CollapsibleBubble
