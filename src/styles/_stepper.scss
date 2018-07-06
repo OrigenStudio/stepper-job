@@ -5,6 +5,7 @@
   background-color: #292929;
   padding: $defaultPadding * 4;
   overflow: scroll;
+  align-items: center;
 
   .textSection {
     display: flex;
@@ -36,8 +37,8 @@
       margin-bottom: $defaultUnit;
     }
   }
-  .textSectionVertical{
-      align-items: center;
+  .textSectionVertical {
+    align-items: center;
   }
 
   .horizontal {
@@ -48,5 +49,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .expandCollapseWrapper {
+    margin-top: $defaultUnit;
+    span {
+      font-family: Montserrat;
+      font-size: 12px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: $accentTextColor;
+      cursor: pointer;
+    }
   }
 }

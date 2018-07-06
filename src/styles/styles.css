@@ -266,7 +266,8 @@
   flex-direction: column;
   background-color: #292929;
   padding: 32px;
-  overflow: scroll; }
+  overflow: scroll;
+  align-items: center; }
   .stepperWrapper .textSection {
     display: flex;
     flex-direction: column;
@@ -302,6 +303,18 @@
     display: flex;
     flex-direction: column;
     align-items: center; }
+  .stepperWrapper .expandCollapseWrapper {
+    margin-top: 8px; }
+    .stepperWrapper .expandCollapseWrapper span {
+      font-family: Montserrat;
+      font-size: 12px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ffffff;
+      cursor: pointer; }
 
 .App {
   text-align: center; }
